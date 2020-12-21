@@ -1,5 +1,6 @@
 package com.AH.BreizhVideoBack.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
@@ -9,10 +10,12 @@ import javax.persistence.GenerationType;
 
 public class Village {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO) 
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
+    @Column(name="name")
     private String nom;
-    private Integer codePostal;
+    @Column(name="post_code")
+    private String codePostal;
 
     public long getId() {
         return id;
@@ -22,7 +25,7 @@ public class Village {
         return nom;
     }
 
-    public Integer getCodePostal() {
+    public String getCodePostal() {
         return codePostal;
     }
 
@@ -34,7 +37,7 @@ public class Village {
         this.nom = nom;
     }
 
-    public void setCodePostal(Integer codePostal) {
+    public void setCodePostal(String codePostal) {
         this.codePostal = codePostal;
     }
 
