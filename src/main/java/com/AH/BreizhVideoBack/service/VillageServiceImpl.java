@@ -17,7 +17,7 @@ public class VillageServiceImpl implements VillageService {
     @Override
     public List<Village> listVillages(String search) {
         if (! "".equals(search))
-            return repository.findByNameContaining(search);
+            return repository.findByNomContaining(search);
         else
             return repository.findAll();
 

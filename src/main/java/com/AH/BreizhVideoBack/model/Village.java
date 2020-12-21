@@ -12,7 +12,7 @@ public class Village {
     @GeneratedValue(strategy=GenerationType.AUTO) 
     private long id;
     private String nom;
-    private Integer codePostalCode;
+    private Integer codePostal;
 
 
 
@@ -26,8 +26,8 @@ public class Village {
     }
 
 
-    public Integer getCodePostalCode() {
-        return codePostalCode;
+    public Integer getCodePostal() {
+        return codePostal;
     }
 
 
@@ -39,8 +39,8 @@ public class Village {
         this.nom = nom;
     }
 
-    public void setCodePostalCode(Integer codePostalCode) {
-        this.codePostalCode = codePostalCode;
+    public void setCodePostal(Integer codePostal) {
+        this.codePostal = codePostal;
     }
 
 }
