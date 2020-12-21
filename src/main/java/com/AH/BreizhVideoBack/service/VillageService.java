@@ -1,18 +1,16 @@
 package com.AH.BreizhVideoBack.service;
 
 import com.AH.BreizhVideoBack.model.Village;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-@Transactional
+
 public interface VillageService {
-    List<Village> listVillages(String search);
-    Optional<Village> getVillage(Long id);
-    Village insertVillage(Village village);
-    Village updateVillage(Long id, Village village);
-    void deleteVillage(Long id);
+    Optional<Village> findById(Long id);
+    List<Village> findAll(String search);
+    Village insert(Village village);
+    Village update(Long id, Village village);
+    void delete(Long id);
 }

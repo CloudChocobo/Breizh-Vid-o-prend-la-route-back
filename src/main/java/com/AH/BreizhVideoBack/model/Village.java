@@ -14,22 +14,17 @@ public class Village {
     private String nom;
     private Integer codePostal;
 
-
-
     public long getId() {
         return id;
     }
-
 
     public String getNom() {
         return nom;
     }
 
-
     public Integer getCodePostal() {
         return codePostal;
     }
-
 
     public void setId(long id) {
         this.id = id;
