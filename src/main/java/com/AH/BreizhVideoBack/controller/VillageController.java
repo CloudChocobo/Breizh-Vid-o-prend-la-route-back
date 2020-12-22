@@ -28,7 +28,7 @@ public class VillageController {
 
     @CrossOrigin
     @GetMapping("/villages")
-   
+   //récupérer les données et les lire (tous les villages)
     public ResponseEntity<List<Village>> getAllVillages(@RequestParam(value="search", defaultValue="") String search) {
        List<Village> listVillage;
         try {
@@ -40,7 +40,7 @@ public class VillageController {
     }
 
     @CrossOrigin
-    @GetMapping("/villages/{id}")
+    @GetMapping("/villages/{id}") //récupérer les données et les lire par ID
     ResponseEntity<Village> getVillageById(@PathVariable(value="id") long id) {
         Optional<Village> village = service.findById(id);
         if (village.isEmpty()) {
@@ -50,13 +50,13 @@ public class VillageController {
     }
 
     @CrossOrigin
-    @PostMapping("/villages")    
+    @PostMapping("/villages")    //ajouter un village
     ResponseEntity<Village> addVillage(@RequestBody Village village){
         return ResponseEntity.ok().body(service.insert(village));
     }
 
     @CrossOrigin
-    @PutMapping("/villages/{id}")
+    @PutMapping("/villages/{id}") //mettre à jour un village
     ResponseEntity<Village> updateVillage(@PathVariable(value="id") long id, @RequestBody Village village){
         Village updatedVillage = service.update(id, village);
         if(updatedVillage == null)
@@ -65,7 +65,7 @@ public class VillageController {
         }
         
     @CrossOrigin
-    @DeleteMapping("/villages/{id}")
+    @DeleteMapping("/villages/{id}") // supprimer un village
     ResponseEntity<Village> deleteVillage(@PathVariable(value="id") long id){
         Optional<Village> village = service.findById(id);
         if(village.isEmpty())

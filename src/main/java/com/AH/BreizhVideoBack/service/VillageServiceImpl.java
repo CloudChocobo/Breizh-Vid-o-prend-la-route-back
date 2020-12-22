@@ -14,7 +14,8 @@ public class VillageServiceImpl implements VillageService {
     @Autowired
     private VillageRepository repository;
 
-    @Override
+
+    @Override //recherche tout
     public List<Village> findAll(String search) {
         if (! "".equals(search))
             return repository.findByNomContaining(search);
@@ -22,17 +23,17 @@ public class VillageServiceImpl implements VillageService {
             return repository.findAll();
 
     }
-    @Override
+    @Override //recherche par ID
     public Optional<Village> findById(Long id) {
         return repository.findById(id);
     }
 
-    @Override
+    @Override //création village
     public Village insert(Village village) {
         return repository.save(village);
     }
 
-    @Override
+    @Override //MAJ village
     public Village update(Long id, Village village) {
         Optional<Village> optionalVillage = this.findById(id);
         if(optionalVillage.isPresent()) {
@@ -45,7 +46,7 @@ public class VillageServiceImpl implements VillageService {
         return null;
     }
 
-    @Override
+    @Override //suppression village
     public void delete(Long id) {
         Optional<Village> village = this.findById(id);
         if (village.isPresent()) {
