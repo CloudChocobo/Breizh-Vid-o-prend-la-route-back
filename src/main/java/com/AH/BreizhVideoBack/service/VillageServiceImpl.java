@@ -3,7 +3,6 @@ package com.AH.BreizhVideoBack.service;
 import com.AH.BreizhVideoBack.model.Village;
 import com.AH.BreizhVideoBack.repository.VillageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,6 +26,7 @@ public class VillageServiceImpl implements VillageService {
     public Optional<Village> findById(Long id) {
         return repository.findById(id);
     }
+
     @Override
     public Village insert(Village village) {
         return repository.save(village);
