@@ -15,7 +15,7 @@ public class Film {
     @Column(name="title")
     private String titre;
     @Column(name="releaseYear")
-    private String anneeSortie;
+    private Int anneeSortie;
 
     public long getId() {
         return id;
@@ -25,8 +25,16 @@ public class Film {
         return titre;
     }
 
-    public String getAnneeSortie() {
+    public String getDescription() {
+        return description;
+    }
+
+    public Int getAnneeSortie() {
         return anneeSortie;
+    }
+
+    public Int getDuree() {
+        return duree;
     }
 
     public void setId(long id) {
@@ -37,8 +45,16 @@ public class Film {
         this.titre = titre;
     }
 
-    public void setAnneeSortie(String anneeSortie) {
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAnneeSortie(Int anneeSortie) {
         this.anneeSortie = anneeSortie;
+    }
+
+    public void setDuree(Int duree) {
+        this.duree = duree;
     }
 
 }
