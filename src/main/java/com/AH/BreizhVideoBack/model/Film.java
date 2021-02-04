@@ -16,6 +16,10 @@ public class Film {
     private String titre;
     @Column(name="releaseYear")
     private Int anneeSortie;
+    @Column(name="description")
+    private String description;
+    @Column (name="duree")
+    private String duree;
 
     public long getId() {
         return id;
